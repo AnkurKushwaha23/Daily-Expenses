@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolMain"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                app:cardCornerRadius="12sp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/spinnerCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:layout_marginStart="30sp"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginEnd="30sp"
+                        android:background="@drawable/textfield"
+                        android:textColor="@color/black" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:layout_marginStart="30sp"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginEnd="30sp"
+                        android:background="@drawable/textfield"
+                        android:drawableStart="@drawable/baseline_shopping_bag_24"
+                        android:hint="@string/product"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:layout_marginStart="30sp"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginEnd="30sp">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/txtQuantity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50sp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/textfield"
+                                    android:drawableStart="@drawable/baseline_add_24"
+                                    android:hint="@string/quantity"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="@color/black" />
+
+                                <Spinner
+                                    android:id="@+id/spinnerQuantity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50sp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/textfield"
+                                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                                    android:textAlignment="center" />
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/txtPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:layout_marginStart="30sp"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginEnd="30sp"
+                        android:background="@drawable/textfield"
+                        android:drawableStart="@drawable/baseline_currency_rupee_24"
+                        android:hint="@string/price"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/btnAdd"
+                        style="@style/MyButtonStyle"
+                        android:layout_width="100sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12sp"
+                        android:layout_marginBottom="10sp"
+                        android:text="@string/add_expense"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                app:cardCornerRadius="12sp"
+                app:cardElevation="8dp">
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                app:cardCornerRadius="12sp"
+                app:cardElevation="8dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="360sp" />
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sprout"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_item"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentTop="true"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:title="Daily Expenses"
+        app:titleTextColor="@color/black"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"/>
+    <Button
+        android:id="@+id/btnHistory"
+        style="@style/MyButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginStart="15sp"
+        android:text="@string/saved_history"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DailyExpense" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.DailyExpense" parent="Theme.AppCompat.Light.NoActionBar">
+<!--        <item name="statusBarBackground">@color/bg_dark</item>-->
+        <item name="colorPrimaryDark">@color/bg_dark</item>
+        <item name="toolbarStyle">@style/MyToolbar</item>
+    </style>
+
+    <style name="MyButtonStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Background color for the button -->
+        <item name="android:background">@drawable/btn_bg</item>
+        <!-- Text color for the button -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <!-- Custom Toolbar Style -->
+    <style name="MyToolbar" parent="Widget.AppCompat.Toolbar">
+        <!-- Customize the background for the Toolbar -->
+        <item name="android:background">@color/blue</item>
+        <!-- Customize the title text appearance -->
+        <!-- Customize the subtitle text appearance (if needed) -->
+        <!--<item name="android:subtitleTextAppearance">@style/ToolbarSubtitleText</item>-->
+        <!-- Add more customizations as needed -->
+    </style>
+</resources>

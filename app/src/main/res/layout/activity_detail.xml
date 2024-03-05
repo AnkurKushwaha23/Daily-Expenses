@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    tools:context=".DetailActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentTop="true"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:title="Saved Expenses"
+        app:titleTextColor="@color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:layout_below="@id/toolMain">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7sp"
+            android:layout_marginEnd="7sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:id="@+id/recyclerView"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyLay"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/optionsLay"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="200sp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:alpha=".6"
+            android:src="@drawable/empty_folder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha=".6"
+            android:text="@string/empty"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:gravity="center"
+        android:id="@+id/optionsLay"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyButtonStyle"
+            android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="@string/delete_all" />
+    </LinearLayout>
+</RelativeLayout>
