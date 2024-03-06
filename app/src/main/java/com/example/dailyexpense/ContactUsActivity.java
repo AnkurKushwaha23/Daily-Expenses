@@ -61,7 +61,7 @@ public class ContactUsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent imsg = new Intent(Intent.ACTION_SENDTO);
-                imsg.setData(Uri.parse("smsto:"+Uri.encode("+917048216866")));
+                imsg.setData(Uri.parse("smsto:"+Uri.encode("+91000000000")));
                 imsg.putExtra("sms_body","This App is Awesome!");
                 startActivity(imsg);
                 MainActivity.showToastStatic(ContactUsActivity.this,"Thanks for Contacting us");
@@ -72,7 +72,7 @@ public class ContactUsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent imail = new Intent(Intent.ACTION_SEND);
                 imail.setType("message/rfc822");
-                imail.putExtra(Intent.EXTRA_EMAIL,new String[]{"ankursenpai@gmail.com"});
+                imail.putExtra(Intent.EXTRA_EMAIL,new String[]{"idontknow@gmail.com"});
                 imail.putExtra(Intent.EXTRA_SUBJECT,"Queries");
                 imail.putExtra(Intent.EXTRA_TEXT,"This App is Awesome!");
                 startActivity(Intent.createChooser(imail,"Email via"));
@@ -83,18 +83,18 @@ public class ContactUsActivity extends AppCompatActivity {
         imgLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String appLink = "https://www.linkedin.com/in/ankur-kushwaha-818791248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
+                String appLink = "https://www.linkedin.com/in/ankur-kushwaha";
                 String packageName ="com.linkedin.android";
-                String webLink ="https://www.linkedin.com/in/ankur-kushwaha-818791248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
+                String webLink ="https://www.linkedin.com/in/ankur-kushwaha";
                 openLink(appLink,packageName,webLink);
             }
         });
         imgX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String appLink = "https://x.com/AnkurKushwaha23?t=K6GrpfTsLnfWb4JQ51pPhQ&s=03";
+                String appLink = "https://x.com/AnkurKushwaha23";
                 String packageName ="com.twitter.android.";
-                String webLink ="https://x.com/AnkurKushwaha23?t=K6GrpfTsLnfWb4JQ51pPhQ&s=03";
+                String webLink ="https://x.com/AnkurKushwaha23";
                 openLink(appLink,packageName,webLink);
             }
         });
