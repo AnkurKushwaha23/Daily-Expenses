@@ -52,7 +52,7 @@ public class ContactUsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent idial = new Intent(Intent.ACTION_DIAL);
-                idial.setData(Uri.parse("tel: +917048216866"));
+                idial.setData(Uri.parse("tel: +9100000000"));
                 startActivity(idial);
                 MainActivity.showToastStatic(ContactUsActivity.this,"Thanks for Contacting us");
             }
